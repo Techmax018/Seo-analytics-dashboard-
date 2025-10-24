@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Analytics Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Overlay for Mobile -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+        
+        <!-- Sidebar -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>
+                    <i class="fas fa-chart-line"></i>
+                    SEO Analytics
+                </h2>
+                <button class="mobile-close" id="closeSidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="active"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-traffic-light"></i> Traffic Analysis</a></li>
+                    <li><a href="#"><i class="fas fa-file-alt"></i> Content Performance</a></li>
+                    <li><a href="#"><i class="fas fa-search"></i> Keyword Rankings</a></li>
+                    <li><a href="#"><i class="fas fa-external-link-alt"></i> Backlink Analysis</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <button class="mobile-menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="last-updated">Last updated: <span id="currentTime">2:45:24 PM</span></div>
+                </div>
+                <button class="refresh-btn" id="refreshBtn">
+                    <i class="fas fa-sync-alt"></i> Refresh Data
+                </button>
+            </div>
+
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+                <h1>Dashboard Overview</h1>
+                <p>Real-time SEO performance metrics</p>
+            </div>
+
+            <!-- Metrics Grid -->
+            <div class="metrics-grid" id="metricsGrid">
+                <div class="metric-card">
+                    <div class="metric-value" id="realTimeUsers">0</div>
+                    <div class="metric-label">Real-time Users</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="totalSessions">0</div>
+                    <div class="metric-label">Total Sessions</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="avgDuration">0s</div>
+                    <div class="metric-label">Avg. Duration</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="bounceRate">0%</div>
+                    <div class="metric-label">Bounce Rate</div>
+                </div>
+            </div>
+
+            <!-- Traffic Chart -->
+            <div class="charts-section">
+                <div class="section-header">
+                    <h2>Traffic Overview</h2>
+                </div>
+                <div class="chart-container">
+                    <div class="placeholder-chart">
+                        <i class="fas fa-chart-bar"></i>
+                        <p>Traffic data chart will appear here</p>
+                        <small>Refresh data to view analytics</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Pages Table -->
+            <div class="data-section">
+                <div class="section-header">
+                    <h2>Top Performing Pages</h2>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Page URL</th>
+                            <th>Sessions</th>
+                            <th>Avg. Duration</th>
+                            <th>Bounce Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pagesTableBody">
+                        <tr>
+                            <td colspan="4" style="text-align: center; color: #64748b; padding: 2rem;">
+                                <i class="fas fa-database" style="font-size: 2rem; margin-bottom: 0.5rem; display: block;"></i>
+                                No data available. Click refresh to load data.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/dashboard-utils.js"></script>
+    <script src="js/api-service.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

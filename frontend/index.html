@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Analytics Dashboard - Login</title>
+    <link rel="stylesheet" href="css/landing.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-header">
+            <i class="fas fa-chart-line"></i>
+            <h1>SEO Analytics Dashboard</h1>
+            <p>Connect to your Google Analytics data</p>
+        </div>
+        
+        <div class="login-form">
+            <div class="form-group">
+                <label for="propertyId">Google Analytics Property ID</label>
+                <input type="text" id="propertyId" placeholder="G-XXXXXXXXXX" value="G-GDJV6XQJ4Y">
+            </div>
+            
+            <div class="form-group">
+                <label for="credentials">Service Account JSON</label>
+                <textarea id="credentials" placeholder="Paste your service account JSON credentials" rows="6"></textarea>
+            </div>
+            
+            <button id="connectBtn" class="btn btn-primary">
+                <i class="fas fa-plug"></i> Connect to Analytics
+            </button>
+            
+            <div class="setup-help">
+                <h3>Setup Instructions:</h3>
+                <ol>
+                    <li>Go to <a href="https://console.cloud.google.com/" target="_blank">Google Cloud Console</a></li>
+                    <li>Create a service account and download JSON key</li>
+                    <li>Enable Analytics Data API</li>
+                    <li>Add service account email to your GA4 property</li>
+                    <li>Paste credentials above and connect</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div id="statusMessage" class="status-message hidden"></div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
